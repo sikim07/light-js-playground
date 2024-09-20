@@ -31,8 +31,6 @@ app.post("/api/start", async (req, res) => {
             headers: {
                 "X-Auth-Token": AUTH_TOKEN,
                 "Content-Type": "application/json",
-                x_auth_token: AUTH_TOKEN,
-                Athentication: `Bearer ${AUTH_TOKEN}`,
             },
             body: JSON.stringify(req.body),
         });
