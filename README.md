@@ -6,6 +6,7 @@
 -   **node-fetch** `^3.3.1` : Use to call external API on node.
 -   **cors** `^2.8.5` : Use to call external API avoiding **Same-Origin Policy**
 -   **nodemon** `^3.1.6` : Use to quick apply of change.
+-   **dotenv** `^16.4.5` : Use to handle constants easily.
 
 ---
 
