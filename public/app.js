@@ -1,5 +1,6 @@
 const rootDivElement = document.querySelectorAll("#root")[0];
 
+// In case of hard data
 const init = async () => {
     const r = await fetch("./data.json");
     const objectData = await r.json();
@@ -16,6 +17,7 @@ const init = async () => {
     }
 };
 
+// In case of using external API call
 const callAPI = async () => {
     try {
         const r = await fetch("/api/start", {
