@@ -12,4 +12,4 @@
 
 ### Reason why made
 
-I've some need to make sample using external API call. But for security reasons, browsers do not enforce CORS policies when requesting with the file:// protocol( local file protocols). This causes problems when trying to access external APIs. As using with this Light express server, we can test using externals.
+Some had to create samples using external API calls. However, for security reasons, browsers do not enforce CORS policies when requesting with the file:// protocol (local file protocol). This causes problems when trying to access external APIs. This Light Express server allows you to test using external. Feel free to use it.
