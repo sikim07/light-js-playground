@@ -5,10 +5,6 @@ import fetch from "node-fetch";
 const app = express();
 const port = 8000;
 
-const BASE_URL =
-    "https://7zszxecwra.execute-api.ap-northeast-2.amazonaws.com/api/";
-const AUTH_TOKEN = "5885aca8f187692550fdce72a6b45309";
-
 // CORS 설정
 app.use(
     cors({
@@ -25,11 +21,10 @@ app.use(express.static("public"));
 // 클라이언트에서 호출할 API 엔드포인트
 app.post("/api/start", async (req, res) => {
     try {
-        console.log("req.body", req.body);
-        const response = await fetch(`${BASE_URL}/start`, {
+        const response = await fetch(`${process.env.BASE_URL}/start`, {
             method: "POST",
             headers: {
-                "X-Auth-Token": AUTH_TOKEN,
+                "X-Auth-Token": process.env.AUTH_TOKEN,
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(req.body),
@@ -42,7 +37,6 @@ app.post("/api/start", async (req, res) => {
                     .status(403)
                     .json({ error: "Forbidden: Access is denied." });
             } else {
-                console.log(`HTTP error! Status: ${response.statusText}`);
                 console.log(`HTTP error! Status: ${await response.text()}`);
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
